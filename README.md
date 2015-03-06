@@ -1,7 +1,6 @@
 # stomp-sampler
-Raspberry Pi powered sampler with stompbox pedal operation.
+A Raspberry Pi powered sampler with stompbox pedal operation.
 
-# Stomp Samper
 ![Case](http://cdn3.volusion.com/scund.bojht/v/vspfiles/photos/options/500-1001-1345-T.jpg?1398344390)
 #### 3/5/15
 
