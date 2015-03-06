@@ -1,2 +1,84 @@
 # stomp-sampler
 Raspberry Pi powered sampler with stompbox pedal operation.
+
+# Stomp Samper
+![Case](http://cdn3.volusion.com/scund.bojht/v/vspfiles/photos/options/500-1001-1345-T.jpg?1398344390)
+#### 3/5/15
+
+### Goals
+* Push button operation sampler.
+* Standard two-button guitar stompbox pedal form-factor.
+* One-shot sample playback, queueing, stopping.
+* 4+ sample storage via SD or USB.
+* Visual indication (4 LED array) of which sample is queued.
+* Battery operation.
+* Standard 1/4" mono audio output to DI box.
+
+### Parts
+* [Raspberry Pi][pi] - *Model A+, 256 MB RAM, 3.5mm audio*
+
+* [Power Supply][power] - *5V, 1000mA USB*
+
+* [SD Card][sd] - *8GB, microSD+adapter, Class 10, 10Mb/s*
+
+* Footswitches (2) *research SPST vs. DPDT vs. TPDT*
+
+* LEDs (4+) - possibly in ascending color Green, Yellow, Orange, Red
+
+* [AA Battery pack][aa]
+
+* [IB4001 Diode][diode] - *Put in series to drop 4xAA alkaline from 6V to 5.3V*
+
+* [Enclosure][enc] - *1590BB H42, 4-hole, 2-footswitch, 4.67" x 3.68" x 1.18"*
+
+* Etc. Wire / Resistors / Capacitors, TBD.
+
+
+
+###Milestones
+1. ~~Order starting parts - Raspberry Pi, Power Supply, SD Card.~~
+2. Get Raspberry Pi running Raspbian.
+3. Simple playback of WAV file from SD card or USB drive.
+4. Write audio queue application.
+5. Design circuit, order internal parts.
+6. Integrate footswitch buttons with audio queue app.
+7. LED indicators show queue index.
+8. 1/4" audio output.
+9. Battery powered operation.
+10. Design enclosure and die cast drilling template.
+11. Assemble enclosure.
+
+
+### Resources
+
+* [Parts list Doc][parts] - *Shared Google doc*
+
+* [Mammoth Electronics][mammoth] - *guitar pedal parts*
+
+
+* [Adafruit][ada] - *Raspberry Pi parts*
+
+[parts]:https://docs.google.com/spreadsheets/d/1p6p0Bd8CLel-TAVeZC0bcEx_INBNSggYxUmjXTRixgc/edit#gid=0
+[enc]:http://www.mammothelectronics.com/4S1590BB-p/500-1001.htm
+[pi]:http://www.adafruit.com/products/2266
+[sd]:http://www.newegg.com/Product/Product.aspx?Item=N82E16820139532
+[power]:https://www.adafruit.com/products/501
+[aa]:http://www.adafruit.com/products/830
+[diode]:http://www.adafruit.com/products/755
+
+[mammoth]:http://www.mammothelectronics.com/
+[ada]:http://www.adafruit.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
