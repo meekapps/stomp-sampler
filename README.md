@@ -54,8 +54,11 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 
 * [Mammoth Electronics][mammoth] - *guitar pedal parts*
 
-
 * [Adafruit][ada] - *Raspberry Pi parts*
+
+* [Octopart][octopart] - *Electronic part search engine*
+
+* [Graphical Resistance Calculator][rescalc] - *Resistor color code lookup GUI*
 
 [parts]:https://docs.google.com/spreadsheets/d/1p6p0Bd8CLel-TAVeZC0bcEx_INBNSggYxUmjXTRixgc/edit#gid=0
 [enc]:http://www.mammothelectronics.com/4S1590BB-p/500-1001.htm
@@ -64,6 +67,8 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 [power]:https://www.adafruit.com/products/501
 [aa]:http://www.adafruit.com/products/830
 [diode]:http://www.adafruit.com/products/755
+[octopart]:https://octopart.com
+[rescalc]:http://www.dannyg.com/examples/res2/resistor.htm
 
 [mammoth]:http://www.mammothelectronics.com/
 [ada]:http://www.adafruit.com
