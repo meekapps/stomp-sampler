@@ -63,6 +63,8 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 
 * [Pi4J Project][pins] - *Raspberry Pi GPIO pins*  
 
+* [Pyglet][pyglet] - *Python multimedia module*
+
 
 [parts]:https://docs.google.com/spreadsheets/d/1p6p0Bd8CLel-TAVeZC0bcEx_INBNSggYxUmjXTRixgc/edit#gid=0
 [enc]:http://www.mammothelectronics.com/4S1590BB-p/500-1001.htm
