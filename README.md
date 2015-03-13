@@ -35,8 +35,8 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 
 
 ###Milestones
-1. ~~Order starting parts - Raspberry Pi, Power Supply, SD Card.~~
-2. ~~Get Raspberry Pi running Raspbian.~~
+1. ~~Acquire starting parts - Raspberry Pi, Power supply, SD card.~~
+2. ~~Format SD card, install Raspbian on Pi.~~
 3. Simple Python playback of WAV file from SD card.
 4. Use mechanical switch via GPIO for playback/pause.
 5. Write Python audio queue application.
