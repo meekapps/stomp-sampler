@@ -79,6 +79,7 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 [mammoth]:http://www.mammothelectronics.com/
 [ada]:http://www.adafruit.com
 [pins]:http://pi4j.com/pins/model-a-plus.html
+[pyglet]:http://www.pyglet.org
 
 
 
