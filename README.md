@@ -61,6 +61,9 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 
 * [Graphical Resistance Calculator][rescalc] - *Resistor color code lookup GUI*
 
+* [Pi4J Project][pins] - *Raspberry Pi GPIO pins*  
+
+
 [parts]:https://docs.google.com/spreadsheets/d/1p6p0Bd8CLel-TAVeZC0bcEx_INBNSggYxUmjXTRixgc/edit#gid=0
 [enc]:http://www.mammothelectronics.com/4S1590BB-p/500-1001.htm
 [pi]:http://www.adafruit.com/products/2266
@@ -73,6 +76,7 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 
 [mammoth]:http://www.mammothelectronics.com/
 [ada]:http://www.adafruit.com
+[pins]:http://pi4j.com/pins/model-a-plus.html
 
 
 
