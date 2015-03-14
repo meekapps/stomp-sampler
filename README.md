@@ -59,9 +59,10 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 * [Octopart][octopart] - *Electronic part search engine*
 * [Graphical Resistance Calculator][rescalc] - *Resistor color code lookup GUI*
 * [Pi4J Project][pins] - *Raspberry Pi GPIO pins*  
-* ~~[Pyglet][pyglet] - *Python multimedia module*~~ *needs OpenGL to run, use omxplayer[omxplayer] instead*
+* ~~[Pyglet][pyglet] - *Python multimedia module*~~ *needs OpenGL to run, use [omxplayer] instead*
 * [Python-Dev][pythondev] - *needed for gpio*
 * [RPi GPIO][gpio] - *interface with RPi's General Purpose IO pins.*
+* [omxplayer][omxplayer] - *RPi audio player*
 
 [parts]:https://docs.google.com/spreadsheets/d/1p6p0Bd8CLel-TAVeZC0bcEx_INBNSggYxUmjXTRixgc/edit#gid=0
 [enc]:http://www.mammothelectronics.com/4S1590BB-p/500-1001.htm
