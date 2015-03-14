@@ -59,7 +59,7 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 * [Octopart][octopart] - *Electronic part search engine*
 * [Graphical Resistance Calculator][rescalc] - *Resistor color code lookup GUI*
 * [Pi4J Project][pins] - *Raspberry Pi GPIO pins*  
-* ~~[Pyglet][pyglet] - *Python multimedia module*~~ *needs OpenGL to run, use omxplayer instead*
+* ~~[Pyglet][pyglet] - *Python multimedia module*~~ *needs OpenGL to run, use omxplayer[omxplayer] instead*
 * [Python-Dev][pythondev] - *needed for gpio*
 * [RPi GPIO][gpio] - *interface with RPi's General Purpose IO pins.*
 
@@ -78,7 +78,7 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 [ada]:http://www.adafruit.com
 [pins]:http://pi4j.com/pins/model-a-plus.html
 [pyglet]:http://www.pyglet.org
-
+[omxplayer]:http://elinux.org/Omxplayer
 
 
 
