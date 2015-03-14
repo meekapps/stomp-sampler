@@ -39,9 +39,9 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 2. ~~Format SD card, install Raspbian on Pi.~~
 3. ~~Setup and connect to Pi via SSH.~~
 4. ~~Simple Python audio playback of WAV file from SD card out Pi audio.~~
-5. Use mechanical switch via GPIO for playback/pause.
-6. Figure out better way to transfer files via SD card of USB.
-7. Write audio queue application (Python)
+5. ~~Use mechanical switch via GPIO for playback.~~
+6. Write audio queue application (Python) with playback/pause/next controls.
+7. Figure out better way to transfer files via SD card of USB.
 8. Design circuit, order internal parts.
 9. Integrate footswitch buttons with audio queue app.
 10. LED indicators show queue index.
@@ -54,19 +54,14 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 ### Resources
 
 * [Parts list Doc][parts] - *Shared Google doc*
-
 * [Mammoth Electronics][mammoth] - *guitar pedal parts*
-
 * [Adafruit][ada] - *Raspberry Pi parts*
-
 * [Octopart][octopart] - *Electronic part search engine*
-
 * [Graphical Resistance Calculator][rescalc] - *Resistor color code lookup GUI*
-
 * [Pi4J Project][pins] - *Raspberry Pi GPIO pins*  
-
 * ~~[Pyglet][pyglet] - *Python multimedia module*~~ *needs OpenGL to run, use omxplayer instead*
-
+* [Python-Dev][pythondev] - *needed for gpio*
+* [RPi GPIO][gpio] - *interface with RPi's General Purpose IO pins.*
 
 [parts]:https://docs.google.com/spreadsheets/d/1p6p0Bd8CLel-TAVeZC0bcEx_INBNSggYxUmjXTRixgc/edit#gid=0
 [enc]:http://www.mammothelectronics.com/4S1590BB-p/500-1001.htm
@@ -77,13 +72,12 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 [diode]:http://www.adafruit.com/products/755
 [octopart]:https://octopart.com
 [rescalc]:http://www.dannyg.com/examples/res2/resistor.htm
-
+[pythondev]:https://packages.debian.org/sid/python-dev
+[gpio]:https://pypi.python.org/pypi/RPi.GPIO
 [mammoth]:http://www.mammothelectronics.com/
 [ada]:http://www.adafruit.com
 [pins]:http://pi4j.com/pins/model-a-plus.html
 [pyglet]:http://www.pyglet.org
-
-
 
 
 
