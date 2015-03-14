@@ -63,7 +63,7 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 
 * [Pi4J Project][pins] - *Raspberry Pi GPIO pins*  
 
-* [Pyglet][pyglet] - *Python multimedia module*
+* ~~[Pyglet]~~[pyglet] - ~~*Python multimedia module*~~ *needs OpenGL to run, use omxplayer instead*
 
 
 [parts]:https://docs.google.com/spreadsheets/d/1p6p0Bd8CLel-TAVeZC0bcEx_INBNSggYxUmjXTRixgc/edit#gid=0
@@ -79,7 +79,7 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 [mammoth]:http://www.mammothelectronics.com/
 [ada]:http://www.adafruit.com
 [pins]:http://pi4j.com/pins/model-a-plus.html
-~~[pyglet]:http://www.pyglet.org~~ *need OpenGL to play, use omxplayer instead?*
+[pyglet]:http://www.pyglet.org
 
 
 
