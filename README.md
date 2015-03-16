@@ -58,7 +58,7 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 * [Adafruit][ada] - *Raspberry Pi parts*
 * [Octopart][octopart] - *Electronic part search engine*
 * [Graphical Resistance Calculator][rescalc] - *Resistor color code lookup GUI*
-* [Pi4J Project][pins] - *Raspberry Pi GPIO pins*  
+* [GPIO pins][pins] - *Raspberry Pi GPIO pins, A+ board layout*  
 * ~~[Pyglet][pyglet] - *Python multimedia module*~~ *needs OpenGL to run, use [omxplayer] instead*
 * [Python-Dev][pythondev] - *needed for gpio*
 * [RPi GPIO][gpio] - *interface with RPi's General Purpose IO pins.*
@@ -77,7 +77,7 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 [gpio]:https://pypi.python.org/pypi/RPi.GPIO
 [mammoth]:http://www.mammothelectronics.com/
 [ada]:http://www.adafruit.com
-[pins]:http://pi4j.com/pins/model-a-plus.html
+[pins]:https://blog.adafruit.com/wp-content/uploads/2013/07/Rev2-GPIO-bold1-278x480.jpg
 [pyglet]:http://www.pyglet.org
 [omxplayer]:http://elinux.org/Omxplayer
 
