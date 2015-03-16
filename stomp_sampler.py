@@ -14,15 +14,24 @@ try:
 
     def filenameatindex(index):
         fname = SAMPLESPATH + "/" + filenames[index]
-        print("fnameatindex: " + fname)
         return fname
+
+    def updateled(led):
+        #playing - blink
+        if (player.paused == False):
+            GPIO.output(led, False)
+            time.sleep(1)
+            GPIO.output(led, True)
+            time.sleep(1)
+        #paused - solid
+        else:
+            GPIO.output(LED0, True)
 
     #setup gpio
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(TOGGLEPLAY, GPIO.IN)
     GPIO.setup(LED0, GPIO.OUT)
-    led0state = False
-    GPIO.output(LED0, led0state)
+    GPIO.output(LED0, True)
     buttonstate = GPIO.input(TOGGLEPLAY)
     print("waiting for input...")
 
@@ -30,15 +39,18 @@ try:
     filenames = listdir(SAMPLESPATH)
 
     #setup omxplayer
-    player = Player(filenameatindex(0))
-    player.toggleplay()
+    player = Player(filenameatindex(0), False)
+
+    #runloop
     while True:
         if GPIO.input(TOGGLEPLAY) != buttonstate:
-            print("play/pause")
             player.toggleplay()
-            GPIO.output(LED0, True)
+            #debounce
             time.sleep(1.5)
             buttonstate = GPIO.input(TOGGLEPLAY)
+        else:
+            updateled(LED0)
+                
         
 except KeyboardInterrupt:
     print("goodbye")

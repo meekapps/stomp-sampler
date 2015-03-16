@@ -6,17 +6,23 @@ import re
 from threading import Thread
 
 class Player(object):
-    _LAUNCHOMX = "/usr/bin/omxplayer -o local %s"
-    _PAUSE = "p"
+    LAUNCHOMX = "/usr/bin/omxplayer -o local %s"
+    PAUSE = "p"
     
     paused = False
 
     def __init__(self, filename, args=None, start_playback=False):
         if not args:
             args = ""            
-        command = self._LAUNCHOMX % (filename)
+        command = self.LAUNCHOMX % (filename)
         self._process = pexpect.spawn(command)
+        if (start_playback == False):
+            self.toggleplay()
 
     def toggleplay(self) :
-        if self._process.send(self._PAUSE):
+        if self._process.send(self.PAUSE):
             self.paused = not self.paused
+            if (self.paused):
+                print("pause")
+            else:
+                print("play")
