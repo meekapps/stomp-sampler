@@ -9,8 +9,11 @@ try:
 
     #globals
     TOGGLEPLAY = 11
+    NEXT = 12
     LED0 = 15
     SAMPLESPATH = "samples"
+    BLINKSPEED = 0.75
+    DEBOUNCE = 1.5
 
     def filenameatindex(index):
         fname = SAMPLESPATH + "/" + filenames[index]
@@ -20,38 +23,55 @@ try:
         #playing - blink
         if (player.paused == False):
             GPIO.output(led, False)
-            time.sleep(1)
+            time.sleep(BLINKSPEED)
             GPIO.output(led, True)
-            time.sleep(1)
+            time.sleep(BLINKSPEED)
         #paused - solid
         else:
             GPIO.output(LED0, True)
 
+    def nexttrack():
+        player.stop()
+        global currenttrack
+        
+        if (currenttrack + 1 < len(filenames)):
+            currenttrack += 1
+        else:
+            currenttrack = 0
+        nextfile = filenameatindex(currenttrack)
+        print("up next: " + nextfile)
+
     #setup gpio
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(TOGGLEPLAY, GPIO.IN)
+    GPIO.setup(NEXT, GPIO.IN)
     GPIO.setup(LED0, GPIO.OUT)
     GPIO.output(LED0, True)
-    buttonstate = GPIO.input(TOGGLEPLAY)
+    playbuttonstate = GPIO.input(TOGGLEPLAY)
     print("waiting for input...")
 
     #read samples
+    currenttrack = 0
     filenames = listdir(SAMPLESPATH)
 
-    #setup omxplayer
-    player = Player(filenameatindex(0), False)
+    #setup omxplayer with first sample, don't autoplay
+    player = Player(filenameatindex(currenttrack), False)
 
     #runloop
     while True:
-        if GPIO.input(TOGGLEPLAY) != buttonstate:
+        if GPIO.input(TOGGLEPLAY) != playbuttonstate:
             player.toggleplay()
-            #debounce
-            time.sleep(1.5)
-            buttonstate = GPIO.input(TOGGLEPLAY)
+            time.sleep(DEBOUNCE)
+            playbuttonstate = GPIO.input(TOGGLEPLAY)
+        elif GPIO.input(NEXT):
+            nexttrack()
+            time.sleep(DEBOUNCE)            
         else:
             updateled(LED0)
                 
         
 except KeyboardInterrupt:
     print("goodbye")
+    if (player.paused == False):
+        player.toggleplay()
     GPIO.cleanup()
