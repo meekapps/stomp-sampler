@@ -11,8 +11,8 @@ TOGGLEPLAY = 11
 NEXT = 12
 LED0 = 15
 LED1 = 16
-LED2 = 7
-LED3 = 13
+LED2 = 18
+LED3 = 36
 SAMPLESPATH = "samples"
 BLINKSPEED = 0.75
 DEBOUNCE = 1
@@ -32,6 +32,7 @@ GPIO.output(LED3, False)
 
 leds = [LED0, LED1, LED2, LED3]
 playbuttonstate = GPIO.input(TOGGLEPLAY)
+nextbuttonstate = GPIO.input(NEXT)
 print("waiting for input...")
 
 def filenameatindex(index):
@@ -53,7 +54,7 @@ def updateleds():
     
     #playing - blink
     if (player.paused == False):
-        currentled = self.leds[currenttrack]
+        currentled = leds[currenttrack]
         
         GPIO.output(currentled, False)
         time.sleep(BLINKSPEED)
@@ -91,9 +92,10 @@ try:
             player.toggleplay()
             time.sleep(DEBOUNCE)
             playbuttonstate = GPIO.input(TOGGLEPLAY)
-        elif GPIO.input(NEXT):
+        elif GPIO.input(NEXT) != nextbuttonstate:
             nexttrack()
-            time.sleep(DEBOUNCE)            
+            time.sleep(DEBOUNCE)
+            nextbuttonstate = GPIO.input(NEXT)
         else:
             updateleds()
                 
