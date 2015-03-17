@@ -10,8 +10,6 @@ class Player(object):
     PAUSE = "p"
     NEXT = "k"
     STOP = "q"
-    _STATUS_REXP = re.compile(r"V :\s*([\d.]+).*")
-    _DONE_REXP = re.compile(r"have a nice day.*")
     
     paused = False
 
@@ -24,7 +22,7 @@ class Player(object):
         if (start_playback == False):
             self.toggleplay()
 
-    def toggleplay(self) :
+    def toggleplay(self):
         if self._process.send(self.PAUSE):
             self.paused = not self.paused
             if (self.paused):
