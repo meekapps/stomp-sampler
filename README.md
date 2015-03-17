@@ -42,10 +42,10 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 5. ~~Use mechanical switch via GPIO for playback.~~
 6. Write audio queue application (Python) with playback/pause/next controls.
 7. Figure out better way to transfer files via SD card of USB.
-8. Design circuit, order internal parts.
+8. ~~Design circuits, order internal parts.~~
 9. ~~Integrate footswitch buttons with audio queue app.~~
 10. ~~LED indicators show queue index.~~
-11. 1/4" audio output conversion.
+11. ~~1/4" mono audio output, sum of stereo signal.~~
 12. Battery powered operation.
 13. Design enclosure and die cast drilling template.
 14. Assemble enclosure.
