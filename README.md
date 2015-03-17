@@ -63,6 +63,7 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 * [Python-Dev][pythondev] - *needed for gpio*
 * [RPi GPIO][gpio] - *interface with RPi's General Purpose IO pins.*
 * [omxplayer][omxplayer] - *RPi audio player*
+* [Stereo to Mono][stereosum] - *Summing stereo plug to mono out.*
 
 [parts]:https://docs.google.com/spreadsheets/d/1p6p0Bd8CLel-TAVeZC0bcEx_INBNSggYxUmjXTRixgc/edit#gid=0
 [enc]:http://www.mammothelectronics.com/4S1590BB-p/500-1001.htm
@@ -77,9 +78,10 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 [gpio]:https://pypi.python.org/pypi/RPi.GPIO
 [mammoth]:http://www.mammothelectronics.com/
 [ada]:http://www.adafruit.com
-[pins]:https://blog.adafruit.com/wp-content/uploads/2013/07/Rev2-GPIO-bold1-278x480.jpg
+[pins]:http://pi4j.com/pins/model-a-plus.html
 [pyglet]:http://www.pyglet.org
 [omxplayer]:http://elinux.org/Omxplayer
+[stereosum]:https://brashleraudio.files.wordpress.com/2012/08/screenhunter_02-aug-27-19-35.gif
 
 
 
