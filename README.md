@@ -42,10 +42,10 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 5. ~~Use mechanical switch via GPIO for playback.~~
 6. Write audio queue application (Python) with playback/pause/next controls.
 7. Figure out better way to transfer files via SD card of USB.
-8. Design circuit, order internal parts.
-9. Integrate footswitch buttons with audio queue app.
-10. LED indicators show queue index.
-11. 1/4" audio output conversion.
+8. ~~Design circuits, order internal parts.~~
+9. ~~Integrate footswitch buttons with audio queue app.~~
+10. ~~LED indicators show queue index.~~
+11. ~~1/4" mono audio output, sum of stereo signal.~~
 12. Battery powered operation.
 13. Design enclosure and die cast drilling template.
 14. Assemble enclosure.
@@ -63,6 +63,7 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 * [Python-Dev][pythondev] - *needed for gpio*
 * [RPi GPIO][gpio] - *interface with RPi's General Purpose IO pins.*
 * [omxplayer][omxplayer] - *RPi audio player*
+* [Stereo to Mono][stereosum] - *Summing stereo plug to mono out.*
 
 [parts]:https://docs.google.com/spreadsheets/d/1p6p0Bd8CLel-TAVeZC0bcEx_INBNSggYxUmjXTRixgc/edit#gid=0
 [enc]:http://www.mammothelectronics.com/4S1590BB-p/500-1001.htm
@@ -77,9 +78,10 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 [gpio]:https://pypi.python.org/pypi/RPi.GPIO
 [mammoth]:http://www.mammothelectronics.com/
 [ada]:http://www.adafruit.com
-[pins]:https://blog.adafruit.com/wp-content/uploads/2013/07/Rev2-GPIO-bold1-278x480.jpg
+[pins]:http://pi4j.com/pins/model-a-plus.html
 [pyglet]:http://www.pyglet.org
 [omxplayer]:http://elinux.org/Omxplayer
+[stereosum]:https://brashleraudio.files.wordpress.com/2012/08/screenhunter_02-aug-27-19-35.gif
 
 
 
