@@ -14,7 +14,7 @@ LED1 = 16
 LED2 = 18
 LED3 = 36
 SAMPLESPATH = "samples"
-BLINKSPEED = 0.75
+BLINKSPEED = 0.5
 DEBOUNCE = 1
 
 #setup gpio
@@ -88,6 +88,8 @@ setupplayer()
 try:
     #runloop
     while True:
+        
+        #button input
         if GPIO.input(TOGGLEPLAY) != playbuttonstate:
             player.toggleplay()
             time.sleep(DEBOUNCE)
@@ -97,11 +99,13 @@ try:
             time.sleep(DEBOUNCE)
             nextbuttonstate = GPIO.input(NEXT)
         else:
-            updateleds()
-                
+            updateleds()   
         
 except KeyboardInterrupt:
     print("goodbye")
+    player.shouldpoll = False
+    
     if (player.paused == False):
         player.toggleplay()
+        
     GPIO.cleanup()
