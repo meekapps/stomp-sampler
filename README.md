@@ -20,13 +20,17 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 
 * [SD Card][sd] - *8GB, microSD+adapter, Class 10, 10Mb/s*
 
-* Footswitches (2) *research SPST vs. DPDT vs. TPDT*
+* Footswitches (2) *latching SPDT*
 
 * LEDs (4+) - possibly in ascending color Green, Yellow, Orange, Red
 
-* [AA Battery pack][aa]
+* 9V Battery adapter
 
-* [IB4001 Diode][diode] - *Put in series to drop 4xAA alkaline from 6V to 5.3V*
+* Power switch
+
+* Mono audio jacks (2)
+
+* [Verter 5V Buck-Boost][verter] *to run 5V from 9V pack*
 
 * [Enclosure][enc] - *1590BB H42, 4-hole, 2-footswitch, 4.67" x 3.68" x 1.18"*
 
@@ -40,14 +44,15 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 3. ~~Setup and connect to Pi via SSH.~~
 4. ~~Simple Python audio playback of WAV file from SD card out Pi audio.~~
 5. ~~Use mechanical switch via GPIO for playback.~~
-6. Write audio queue application (Python) with playback/pause/next controls.
-7. Figure out better way to transfer files via SD card of USB.
+6. ~~Write audio queue application (Python) with playback/pause/next controls.~~
+7. Figure out better way to transfer files via SD card or USB.
 8. ~~Design circuits, order internal parts.~~
 9. ~~Integrate footswitch buttons with audio queue app.~~
 10. ~~LED indicators show queue index.~~
 11. ~~1/4" mono audio output, sum of stereo signal.~~
-12. Battery powered operation.
-13. Design enclosure and die cast drilling template.
+12. ~~Battery powered operation.~~
+13. ~~Design enclosure and die cast drilling template.~~
+15. Pi single, root user + sampler boot process.
 14. Assemble enclosure.
 
 
@@ -82,6 +87,7 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 [pyglet]:http://www.pyglet.org
 [omxplayer]:http://elinux.org/Omxplayer
 [stereosum]:https://brashleraudio.files.wordpress.com/2012/08/screenhunter_02-aug-27-19-35.gif
+[verter]:http://www.adafruit.com/product/2190
 
 
 
