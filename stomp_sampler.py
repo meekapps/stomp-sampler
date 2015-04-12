@@ -11,7 +11,7 @@ TOGGLEPLAY = 11
 NEXT = 12
 LED0 = 15
 LED1 = 16
-LED2 = 18
+LED2 = 22
 LED3 = 36
 SAMPLESPATH = "samples"
 BLINKSPEED = 0.5
@@ -44,7 +44,7 @@ def setupplayer():
     global currenttrack
     
     nextfile = filenameatindex(currenttrack)
-    player = Player(nextfile, False)
+    player = Player(nextfile)
     print("ready to play: " + nextfile)
 
 def updateleds():
@@ -88,7 +88,9 @@ setupplayer()
 try:
     #runloop
     while True:
-        
+
+        player.pollDone()
+
         #button input
         if GPIO.input(TOGGLEPLAY) != playbuttonstate:
             player.toggleplay()
@@ -103,9 +105,6 @@ try:
         
 except KeyboardInterrupt:
     print("goodbye")
-    player.shouldpoll = False
-    
-    if (player.paused == False):
-        player.toggleplay()
+    player.stop()
         
     GPIO.cleanup()
