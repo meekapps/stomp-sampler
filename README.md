@@ -52,8 +52,9 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 11. ~~1/4" mono audio output, sum of stereo signal.~~
 12. ~~Battery powered operation.~~
 13. ~~Design enclosure and die cast drilling template.~~
-15. Pi single, root user + sampler boot process.
-14. Assemble enclosure.
+15. ~~Pi single, root user + sampler boot process.~~
+14. ~~Assemble enclosure.~~
+15. Speed up boot time.
 
 
 ### Resources
