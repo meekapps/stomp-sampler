@@ -70,6 +70,7 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 * [RPi GPIO][gpio] - *interface with RPi's General Purpose IO pins.*
 * [omxplayer][omxplayer] - *RPi audio player*
 * [Stereo to Mono][stereosum] - *Summing stereo plug to mono out.*
+* [Ext FS][extfs] - *mount Raspberry Pi formatter SD card on OS X*
 
 [parts]:https://docs.google.com/spreadsheets/d/1p6p0Bd8CLel-TAVeZC0bcEx_INBNSggYxUmjXTRixgc/edit#gid=0
 [enc]:http://www.mammothelectronics.com/4S1590BB-p/500-1001.htm
@@ -89,6 +90,7 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 [omxplayer]:http://elinux.org/Omxplayer
 [stereosum]:https://brashleraudio.files.wordpress.com/2012/08/screenhunter_02-aug-27-19-35.gif
 [verter]:http://www.adafruit.com/product/2190
+[extfs]:http://www.paragon-software.com/home/extfs-mac
 
 
 
