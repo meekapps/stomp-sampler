@@ -54,8 +54,11 @@ def updateleds():
     
     #playing - blink
     if (player.paused == False):
-        currentled = leds[currenttrack]
-        
+        if (currenttrack < len(leds)):
+            currentled = leds[currenttrack]
+        else:
+            currentled = leds[0]
+
         GPIO.output(currentled, False)
         time.sleep(BLINKSPEED)
         GPIO.output(currentled, True)
@@ -63,10 +66,14 @@ def updateleds():
         
     #paused - solid if current track
     else:
-        for i in range(0, len(leds)):
-            ledon = (i == currenttrack)
-            led = leds[i]
-            GPIO.output(led, ledon)
+        if (currenttrack < len(leds)):
+            for i in range(0, len(leds)):
+                ledon = (i == currenttrack)
+                led = leds[i]
+                GPIO.output(led, ledon)
+        else:
+            led = leds[0]
+            GPIO.output(led, True)
 
 def nexttrack():
     global player
@@ -82,7 +89,7 @@ def nexttrack():
 
 #read samples
 currenttrack = 0
-filenames = listdir(SAMPLESPATH)
+filenames = sorted(listdir(SAMPLESPATH))
 setupplayer()
 
 try:
