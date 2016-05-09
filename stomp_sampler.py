@@ -98,15 +98,17 @@ try:
 
         player.pollDone()
 
-        #button input
+        #play/pause button pressed - toggle play/pause state
         if GPIO.input(TOGGLEPLAY) != playbuttonstate:
             player.toggleplay()
             time.sleep(DEBOUNCE)
             playbuttonstate = GPIO.input(TOGGLEPLAY)
+        #next track button pressed
         elif GPIO.input(NEXT) != nextbuttonstate:
             nexttrack()
             time.sleep(DEBOUNCE)
             nextbuttonstate = GPIO.input(NEXT)
+        #otherwise, just update leds
         else:
             updateleds()   
         
