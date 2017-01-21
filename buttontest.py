@@ -23,11 +23,11 @@ try:
         if GPIO.input(BUTTON0) != state0:
             print("button 0 pressed")
             time.sleep(DEBOUNCE)
-            state = GPIO.input(BUTTON0)
+            state0 = GPIO.input(BUTTON0)
         elif GPIO.input(BUTTON1) != state1:
             print("button 1 pressed")
             time.sleep(DEBOUNCE)
-            state = GPIO.input(BUTTON1)
+            state1 = GPIO.input(BUTTON1)
 
 except KeyboardInterrupt:
     GPIO.cleanup()
