@@ -5,8 +5,8 @@ import time
 PIN0 = 29
 PIN1 = 31
 PIN2 = 33
-PIN3 = 35
-PIN4 = 37
+PIN3 = 36
+PIN4 = 38
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(PIN0, GPIO.OUT)

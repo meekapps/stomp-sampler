@@ -15,10 +15,11 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 
 ### Goals 2.0
 * Base on cheaper + smaller Raspberry Pi Zero.
+* Use pHAT DAC for improved audio fidelity.
 * 5 sample indicator LEDs.
 * 1 static power LED (it was impossible to tell if it was still booting or out of batteries).
 * Wall power only. Battery power was impractically short.
-* Larger case, based on 4s6500 components took up entire enclosure.
+* Larger case, based on 4S6500 components took up entire enclosure.
 * Custom drill pattern.
 * Custom paint job.
 
@@ -27,25 +28,31 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 * WiFi adapter + web server to add samples wirelessly.
 
 ### Parts
-* [Raspberry Pi][pi] - *Model A+, 256 MB RAM, 3.5mm audio*
+* [1.0 Raspberry Pi A+][pi1] - *Model A+, 256 MB RAM, 3.5mm audio*
+
+* [2.0 Raspberry Pi Zero][pi2] - *Model Zero, 512 MB RAM, needs [pHAT DAC][phatdac] for audio*
+
+* [pHAT DAC][phatdac] - *Hi-fidelity audio for 2.0 RPi Zero*
 
 * [Power Supply][power] - *5V, 1000mA USB*
 
-* [SD Card][sd] - *8GB, microSD+adapter, Class 10, 10Mb/s*
+* [SD Card][sd] - *8-16GB, microSD+adapter, Class 10, 10Mb/s*
 
 * Footswitches (2) *latching SPDT*
 
-* LEDs (4+) - possibly in ascending color Green, Yellow, Orange, Red
+* LEDs (5) - Red
 
-* 9V Battery adapter
+* ~9V Battery adapter (1.0 only)~
 
-* Power switch
+* ~Power switch (1.0 only)~
 
-* Mono audio jacks (2)
+* Mono audio jack
 
 * [Verter 5V Buck-Boost][verter] *to run 5V from 9V pack*
 
-* [Enclosure][enc] - *1590BB H42, 4-hole, 2-footswitch, 4.67" x 3.68" x 1.18"*
+* [1.0 Enclosure][enc1] - *1590BB H42, 4-hole, 2-footswitch, 4.67" x 3.68" x 1.18"*
+
+* [2.0 Enclosure][enc2] - *4S6500, custom dirlling, 5.625" x 4.625" x 1.5625"*
 
 * Etc. Wire / Resistors / Capacitors, TBD.
 
@@ -67,6 +74,7 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 15. ~~Pi single, root user + sampler boot process.~~
 14. ~~Assemble enclosure.~~
 15. ~~Speed up boot time.~~
+16. Version 2.0 (RPi Zero + pHAT DAC + 5 samples + wallpower)
 
 ### Resources
 
@@ -81,8 +89,10 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 * [omxplayer][omxplayer] - *RPi audio player*
 * [Stereo to Mono][stereosum] - *Summing stereo plug to mono out.*
 * [Ext FS][extfs] - *mount Raspberry Pi formatted SD card on OS X*
+* [pHAT DAC][phatdac] - *digitial audio converter hat for Raspberry Pi Zero*
 
-[enc]:http://www.mammothelectronics.com/4S1590BB-p/500-1001.htm
+[enc1]:http://www.mammothelectronics.com/4S1590BB-p/500-1001.htm
+[enc2]:
 [pi]:http://www.adafruit.com/products/2266
 [sd]:http://www.newegg.com/Product/Product.aspx?Item=N82E16820139532
 [power]:https://www.adafruit.com/products/501
@@ -97,15 +107,14 @@ A Raspberry Pi powered sampler with stompbox pedal operation.
 [stereosum]:https://brashleraudio.files.wordpress.com/2012/08/screenhunter_02-aug-27-19-35.gif
 [verter]:http://www.adafruit.com/product/2190
 [extfs]:http://www.paragon-software.com/home/extfs-mac
+[phatdac]:https://shop.pimoroni.com/products/phat-dac
 
 ### Drill sizes
-* T1-3/4 LED bezel, mini toggles - 1/4" (6mm)
-* T1-3/4 LED without bezel - 3/16"(5mm)
-* 16mm pot - 9/32" (7mm)
-* 24mm pot - 5/16" (8mm)
-* audio jacks - 3/8" (10mm)
-* footswitches - 15/32" (12mm) w/o washer, 1/2" with washer
-* dc power jack - 15/32" (12mm)
+* 5mm LED bezel 5/16"
+* 3mm LED bezel - 1/4"(5mm)
+* audio jacks - 3/8"
+* footswitches - 1/2"
+* dc power jack - 1/2"
 
 
 

@@ -1,4 +1,4 @@
-#stomp_sampler
+#stomp_sampler 2.0
 
 import RPi.GPIO as GPIO
 import time
@@ -7,12 +7,13 @@ from os.path import isfile, join
 from pyomx import Player
 
 #globals
-TOGGLEPLAY = 11
-NEXT = 12
-LED0 = 15
-LED1 = 16
-LED2 = 22
+TOGGLEPLAY = 16
+NEXT = 18
+LED0 = 29
+LED1 = 31
+LED2 = 33
 LED3 = 36
+LED4 = 38
 SAMPLESPATH = "samples"
 BLINKSPEED = 0.5
 DEBOUNCE = 1
@@ -25,12 +26,14 @@ GPIO.setup(LED0, GPIO.OUT)
 GPIO.setup(LED1, GPIO.OUT)
 GPIO.setup(LED2, GPIO.OUT)
 GPIO.setup(LED3, GPIO.OUT)
+GPIO.setup(LED4, GPIO.OUT)
 GPIO.output(LED0, True)
 GPIO.output(LED1, False)
 GPIO.output(LED2, False)
 GPIO.output(LED3, False)
+GPIO.output(LED4, False)
 
-leds = [LED0, LED1, LED2, LED3]
+leds = [LED0, LED1, LED2, LED3, LED4]
 playbuttonstate = GPIO.input(TOGGLEPLAY)
 nextbuttonstate = GPIO.input(NEXT)
 print("waiting for input...")
