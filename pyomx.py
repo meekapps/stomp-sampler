@@ -12,7 +12,7 @@ class Player(object):
     paused = False
 
     def setupPlayer(self):
-        self.process = subprocess.Popen([self.OMX, '-o', OUTPUT, self.currentFilename], stdin=subprocess.PIPE)
+        self.process = subprocess.Popen([self.OMX, '-o', self.OUTPUT, self.currentFilename], stdin=subprocess.PIPE)
   
     def __init__(self, filename):
         print(filename)
