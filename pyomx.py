@@ -5,13 +5,14 @@ import subprocess
 class Player(object):
     #omxplayer
     OMX = "/usr/bin/omxplayer"
+    OUTPUT = "alsa" #alsa for pHAT DAC (pi zero), local for bult-in audio (pi a+)
     TOGGLEPLAY = "p"
     STOP = "q"
     
     paused = False
 
     def setupPlayer(self):
-        self.process = subprocess.Popen([self.OMX, '-o', 'local', self.currentFilename], stdin=subprocess.PIPE)
+        self.process = subprocess.Popen([self.OMX, '-o', OUTPUT, self.currentFilename], stdin=subprocess.PIPE)
   
     def __init__(self, filename):
         print(filename)
