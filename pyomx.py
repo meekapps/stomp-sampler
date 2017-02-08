@@ -37,8 +37,10 @@ class Player(object):
     def stop(self):
         print("stop")
         self.paused = True
-        self.process.stdin.write(self.STOP)
-        self.process.terminate()
+        
+        if self.process.poll() != 0:
+            self.process.stdin.write(self.STOP)
+            self.process.terminate()
 
     def pollDone(self):
        code = self.process.poll()
