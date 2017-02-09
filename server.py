@@ -4,6 +4,7 @@ from flask import Flask
 from samples import Samples
 
 app = Flask(__name__)
+json_type = 'application/json'
 
 @app.route('/', methods=['GET'])
 def index():
@@ -16,14 +17,17 @@ def get_samples():
     
 @app.route('/sample/<sample>', methods=['DELETE'])
 def delete_sample(sample):
-    deleted = Samples.delete(sample)
-    return "deleted"
+    return Samples.delete(sample)
     
 @app.route('/sample', methods=['POST'])
 def post_sample():
-    sample_data = 'something'
-    added = Samples.add(sample_data)
-    return "added"
+    sample_data = 'something' #get post data
+    return Samples.add(sample_data)
     
+def error_response(type, code):
+    error = {'error': type}
+    failure = Response(response=json.dumps(error),status=code,mimetype=json_type)
+    return failure    
+
 if __name__ == '__main__':
 	app.run()
