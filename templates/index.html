@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>stomp-sampler</title>
+</head>
+<h1>samples</h1>
+<body>
+<table>
+{% for sample in samples %}
+<tr>
+<td>{{ sample }}</td>
+<td><button type="button" onclick="alert('{{ sample }}')">delete</button></td>
+</tr>
+{% endfor %}
+</table>
+<input type="file" id="myFile">
+</body>
+</html>

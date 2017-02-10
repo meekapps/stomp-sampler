@@ -2,10 +2,9 @@
 
 import os
 from os import listdir
-import json
 from werkzeug import secure_filename
 
-ALLOWEDTYPES = set(['wav', 'mp3'])
+ALLOWEDTYPES = set(['mp3', 'wav'])
 SAMPLESPATH = "samples"
 
 class Samples(object):
@@ -13,7 +12,7 @@ class Samples(object):
     #delete ./samples/<sample>
     #return True if deleted
     @staticmethod
-    def delete(cls, filename):
+    def delete(filename):
         path = SAMPLESPATH + '/' + filename
         try:
             os.remove(path)
@@ -25,17 +24,15 @@ class Samples(object):
 
     #return the list of files in ./samples
     @staticmethod
-    def get(cls):
+    def get():
         try:
             samples = sorted(listdir(SAMPLESPATH))
-            
-            response = {'samples' : samples}
-            return json.dumps(response)
+            samples = [s for s in samples if allowed(s)]
+            return samples
             
         # no samples directory yet
         except OSError:
-            response = {'samples' : []}
-            return json.dumps(response)
+            return None
     
     #add sample to ./samples/<filename>
     #filename is the next letter in the alphabet with the same file extension
@@ -61,10 +58,6 @@ class Samples(object):
                  
 def allowed(filename):
     return  '.' in filename and filename.rsplit('.', 1)[1] in ALLOWEDTYPES
-        
-def response(success):
-    response = {'success' : success}
-    return json.dumps(response)
     
         
     
