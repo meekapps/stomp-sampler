@@ -16,15 +16,20 @@ class Samples(object):
         path = SAMPLESPATH + '/' + filename
         try:
             os.remove(path)
-            return response(True)
+            return True
             
         # file does not exist
         except OSError:
-            return response(False)
+            return False
 
+    #return SAMPLES_PATH
+    @staticmethod
+    def get_samples_path():
+        return SAMPLESPATH
+        
     #return the list of files in ./samples
     @staticmethod
-    def get():
+    def get_all():
         try:
             samples = sorted(listdir(SAMPLESPATH))
             samples = [s for s in samples if allowed(s)]
@@ -40,21 +45,21 @@ class Samples(object):
     @staticmethod
     def add(file):
         if file == None:
-            response(False)
+            False
             
         #remove unsupported chars
         filename = secure_filename(file.filename)    
         
         #check file types
         if allowed(filename) == False:
-            return response(False)
+            return False
         
         try:
             file.save(os.path.join(SAMPLESPATH, filename))
-            return response(True)
+            return True
             
         except OSError:
-            return response(False)
+            return False
                  
 def allowed(filename):
     return  '.' in filename and filename.rsplit('.', 1)[1] in ALLOWEDTYPES
