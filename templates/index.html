@@ -8,14 +8,19 @@
 {% for sample in samples %}
 <tr>
 <td>{{ sample }}</td>
-<td><audio controls><source src="/sample/{{ sample }}"></audio></td>
+<td><audio controls><source src=""></audio></td>
 <td><button type="button" onclick="deleteSample('{{sample}}')">delete</button></td>
 </tr>
 {% endfor %}
 </table>
 </div>
 <br><br>
-<input type="file" id="myFile">
+
+<form enctype="multipart/form-data" action="/sample" method="POST">
+    Add a new sample: <input name="file" type="file"/>
+    <input type="submit">
+</form>
+
 </body>
 </html>
 
@@ -26,10 +31,10 @@ function deleteSample(sample) {
     let path = endpoint.concat(sample);
     
     xhr.onreadystatechange = function() {
-    if (xhr.readyState == XMLHttpRequest.DONE) {
-        location.reload()
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            location.reload()
+        }
     }
-}
     xhr.open("DELETE", path, true);
     xhr.send();
 }

@@ -1,6 +1,6 @@
 #server to update stomp-sampler samples
 
-from flask import Flask, render_template, Response, request, send_from_directory
+from flask import Flask, redirect, render_template, Response, request, send_from_directory
 from gevent.wsgi import WSGIServer
 import json
 from samples import Samples
@@ -35,7 +35,7 @@ def delete_sample(sample):
 def post_sample():
     file = request.files['file']
     added = Samples.add(file)
-    return response(added)
+    return redirect("/")
 
 #returns success/failure response json
 def response(success):
@@ -43,7 +43,7 @@ def response(success):
     return json.dumps(response) 
 
 if __name__ == '__main__':
-	#app.run(port=5000)
-    server = WSGIServer(('', 5000), app)
-    server.serve_forever()
+	app.run(port=5000)
+    #server = WSGIServer(('', 5000), app)
+    #server.serve_forever()
     
