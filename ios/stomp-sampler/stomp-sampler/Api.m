@@ -15,4 +15,9 @@
   return request;
 }
 
++ (DeleteSampleRequest*) deleteSampleRequestWithSample:(NSString*)sample {
+  DeleteSampleRequest *request = [[DeleteSampleRequest alloc] initWithSample:sample];
+  return request;
+}
+
 @end

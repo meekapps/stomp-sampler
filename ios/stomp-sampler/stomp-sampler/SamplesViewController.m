@@ -59,8 +59,7 @@
 - (void) tableView:(UITableView *)tableView
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
  forRowAtIndexPath:(NSIndexPath *)indexPath {
-  Sample *sample = self.samples[indexPath.row];
-  [self deleteSample:sample];
+  [self deleteSampleAtIndexPath:indexPath];
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -75,8 +74,16 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
   //TODO:
 }
 
-- (void) deleteSample:(Sample*)sample {
-  //TODO:
+- (void) deleteSampleAtIndexPath:(NSIndexPath*)indexPath {
+  Sample *sample = self.samples[indexPath.row];
+  
+  __weak typeof(self) weakSelf = self;
+  [[Api deleteSampleRequestWithSample:sample.filename] executeWithCompletion:^(NSArray<Sample *> *samples) {
+    weakSelf.samples = samples;
+    [weakSelf.tableView beginUpdates];
+    [weakSelf.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [weakSelf.tableView endUpdates];
+  }];
 }
 
 - (void) refreshSamples {

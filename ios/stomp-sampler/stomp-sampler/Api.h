@@ -7,11 +7,13 @@
 //
 
 #import "GetSamplesRequest.h"
+#import "DeleteSampleRequest.h"
 
 @import Foundation;
 
 @interface Api : NSObject
 
 + (GetSamplesRequest*) getSamplesRequest;
++ (DeleteSampleRequest*) deleteSampleRequestWithSample:(NSString*)sample;
 
 @end

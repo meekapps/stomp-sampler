@@ -18,27 +18,4 @@
   return self;
 }
 
-- (void) executeWithCompletion:(GetSamplesCompletion)completion {
-  [self baseExecuteWithCompletion:^(id result) {
-    if (completion) completion(result);
-  }];
-}
-
-#pragma mark - Private
-
-- (NSArray<Sample*>*) deserialize:(id)result {
-  id samples = result[@"samples"];
-  if (!samples) return nil;
-  
-  if (![samples conformsToProtocol:@protocol(NSFastEnumeration)]) return nil;
-  
-  NSMutableArray *mutableSamples = [NSMutableArray array];
-  for (id s in samples) {
-    Sample *sample = [[Sample alloc] initWithFilename:s];
-    [mutableSamples addObject:sample];
-  }
-  
-  return [mutableSamples copy];
-}
-
 @end

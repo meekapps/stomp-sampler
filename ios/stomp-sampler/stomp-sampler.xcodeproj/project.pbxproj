@@ -21,6 +21,8 @@
 		41EF067A1E4ECFF300717D60 /* Api.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EF06791E4ECFF300717D60 /* Api.m */; };
 		41EF06841E4ED11C00717D60 /* ApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EF06831E4ED11C00717D60 /* ApiRequest.m */; };
 		41EF06871E4ED13200717D60 /* GetSamplesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EF06861E4ED13200717D60 /* GetSamplesRequest.m */; };
+		41EF06901E4F52CA00717D60 /* DeleteSampleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EF068F1E4F52CA00717D60 /* DeleteSampleRequest.m */; };
+		41EF06931E4F57A700717D60 /* SamplesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EF06921E4F57A700717D60 /* SamplesRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,10 @@
 		41EF06831E4ED11C00717D60 /* ApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiRequest.m; sourceTree = "<group>"; };
 		41EF06851E4ED13200717D60 /* GetSamplesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetSamplesRequest.h; sourceTree = "<group>"; };
 		41EF06861E4ED13200717D60 /* GetSamplesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetSamplesRequest.m; sourceTree = "<group>"; };
+		41EF068E1E4F52CA00717D60 /* DeleteSampleRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteSampleRequest.h; sourceTree = "<group>"; };
+		41EF068F1E4F52CA00717D60 /* DeleteSampleRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteSampleRequest.m; sourceTree = "<group>"; };
+		41EF06911E4F57A700717D60 /* SamplesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplesRequest.h; sourceTree = "<group>"; };
+		41EF06921E4F57A700717D60 /* SamplesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplesRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,8 +176,12 @@
 				41EF06791E4ECFF300717D60 /* Api.m */,
 				41EF06821E4ED11C00717D60 /* ApiRequest.h */,
 				41EF06831E4ED11C00717D60 /* ApiRequest.m */,
+				41EF06911E4F57A700717D60 /* SamplesRequest.h */,
+				41EF06921E4F57A700717D60 /* SamplesRequest.m */,
 				41EF06851E4ED13200717D60 /* GetSamplesRequest.h */,
 				41EF06861E4ED13200717D60 /* GetSamplesRequest.m */,
+				41EF068E1E4F52CA00717D60 /* DeleteSampleRequest.h */,
+				41EF068F1E4F52CA00717D60 /* DeleteSampleRequest.m */,
 			);
 			name = Api;
 			sourceTree = "<group>";
@@ -285,10 +295,12 @@
 				41EF06771E4ECDB300717D60 /* SamplesTableView.m in Sources */,
 				41EF06841E4ED11C00717D60 /* ApiRequest.m in Sources */,
 				41EF06871E4ED13200717D60 /* GetSamplesRequest.m in Sources */,
+				41EF06931E4F57A700717D60 /* SamplesRequest.m in Sources */,
 				41EF067A1E4ECFF300717D60 /* Api.m in Sources */,
 				41EF066D1E4EC9AF00717D60 /* SampleCell.m in Sources */,
 				41EF06731E4ECC8E00717D60 /* Sample.m in Sources */,
 				41EF06441E4EC8C700717D60 /* AppDelegate.m in Sources */,
+				41EF06901E4F52CA00717D60 /* DeleteSampleRequest.m in Sources */,
 				41EF06411E4EC8C700717D60 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

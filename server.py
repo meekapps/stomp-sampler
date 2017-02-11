@@ -27,8 +27,11 @@ def get_samples():
 #curl -X DELETE http://127.0.0.1:5000/sample/a.wav
 @app.route('/sample/<sample>', methods=['DELETE'])
 def delete_sample(sample):
-    deleted = Samples.delete(sample)
-    return response(deleted)
+    Samples.delete(sample)
+    
+    samples =  Samples.get_all()
+    response = {'samples' : samples}
+    return json.dumps(response)
     
 #curl -X POST -F file=@testfile http://127.0.0.1:5000/sample
 @app.route('/sample', methods=['POST'])

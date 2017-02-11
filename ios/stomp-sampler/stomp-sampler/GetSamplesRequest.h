@@ -6,14 +6,7 @@
 //  Copyright © 2017 Perka. All rights reserved.
 //
 
-#import "ApiRequest.h"
+#import "SamplesRequest.h"
 
-@class Sample;
-
-typedef void(^GetSamplesCompletion)(NSArray <Sample*>*samples);
-
-@interface GetSamplesRequest : ApiRequest <ApiRequestProtocol>
-
-- (void) executeWithCompletion:(GetSamplesCompletion)completion;
-
+@interface GetSamplesRequest : SamplesRequest
 @end
