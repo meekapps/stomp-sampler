@@ -14,7 +14,7 @@
 @property (strong, nonatomic) NSData *formData;
 @end
 
-static NSString *const kApiServerBase = @"http://127.0.0.1:5000";
+static NSString *const kApiServerBase = @"http://192.168.1.5:5000";
 
 @implementation ApiRequest
 
@@ -69,6 +69,12 @@ static NSString *const kApiServerBase = @"http://127.0.0.1:5000";
   
   NSString *contentType = formData ? @"multipart/form-data" : @"application/json";
   [request setValue:contentType forHTTPHeaderField:@"Content-Type"];
+  
+  if (formData) {
+    NSMutableData *body = [NSMutableData data];
+    [body appendData:formData];
+    [request setHTTPBody:body];
+  }
   
   NSURLSession *session = [NSURLSession sharedSession];
   NSURLSessionDataTask *dataTask =

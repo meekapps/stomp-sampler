@@ -31,7 +31,6 @@
 - (void) viewDidLoad {
   [super viewDidLoad];
   
-  [self setupAddButton];
   [self setupPullToRefresh];
 }
 
@@ -70,10 +69,6 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
 #pragma mark - Private
 
-- (void) addSample {
-  //TODO:
-}
-
 - (void) deleteSampleAtIndexPath:(NSIndexPath*)indexPath {
   Sample *sample = self.samples[indexPath.row];
   
@@ -93,13 +88,6 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     weakSelf.samples = samples;
     [weakSelf.tableView reloadData];
   }];
-}
-
-- (void) setupAddButton {
-  self.navigationItem.leftBarButtonItem =
-  [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                target:self
-                                                action:@selector(addSample)];
 }
 
 - (void) setupPullToRefresh {

@@ -178,10 +178,10 @@
 				41EF06831E4ED11C00717D60 /* ApiRequest.m */,
 				41EF06911E4F57A700717D60 /* SamplesRequest.h */,
 				41EF06921E4F57A700717D60 /* SamplesRequest.m */,
-				41EF06851E4ED13200717D60 /* GetSamplesRequest.h */,
-				41EF06861E4ED13200717D60 /* GetSamplesRequest.m */,
 				41EF068E1E4F52CA00717D60 /* DeleteSampleRequest.h */,
 				41EF068F1E4F52CA00717D60 /* DeleteSampleRequest.m */,
+				41EF06851E4ED13200717D60 /* GetSamplesRequest.h */,
+				41EF06861E4ED13200717D60 /* GetSamplesRequest.m */,
 			);
 			name = Api;
 			sourceTree = "<group>";
