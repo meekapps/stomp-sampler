@@ -4,7 +4,7 @@ import os
 from os import listdir
 from werkzeug import secure_filename
 
-ALLOWEDTYPES = set(['mp3', 'wav'])
+ALLOWEDTYPES = set(['mp3'])
 SAMPLESPATH = "samples"
 
 class Samples(object):
@@ -21,11 +21,6 @@ class Samples(object):
         # file does not exist
         except OSError:
             return False
-
-    #return SAMPLES_PATH
-    @staticmethod
-    def get_samples_path():
-        return SAMPLESPATH
         
     #return the list of files in ./samples
     @staticmethod
