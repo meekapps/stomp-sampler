@@ -5,9 +5,37 @@ from os import listdir
 from werkzeug import secure_filename
 
 ALLOWEDTYPES = set(['mp3'])
+MAXSAMPLES=5
 SAMPLESPATH = "samples"
 
 class Samples(object):
+
+    #add sample to ./samples/<filename>
+    #filename is the next letter in the alphabet with the same file extension
+    #returns True if added
+    @staticmethod
+    def add(file):
+        if file == None:
+            False
+            
+        #remove unsupported chars
+        filename = secure_filename(file.filename)    
+        
+        #check file types
+        if allowed(filename) == False:
+            return False
+        
+        try:
+            file.save(os.path.join(SAMPLESPATH, filename))
+            return True
+            
+        except OSError:
+            return False
+            
+    @staticmethod
+    def has_max():
+        samples = Samples.get_all()
+        return True if len(samples) >= MAXSAMPLES else False
 
     #delete ./samples/<sample>
     #return True if deleted
@@ -33,28 +61,6 @@ class Samples(object):
         # no samples directory yet
         except OSError:
             return None
-    
-    #add sample to ./samples/<filename>
-    #filename is the next letter in the alphabet with the same file extension
-    #returns True if added
-    @staticmethod
-    def add(file):
-        if file == None:
-            False
-            
-        #remove unsupported chars
-        filename = secure_filename(file.filename)    
-        
-        #check file types
-        if allowed(filename) == False:
-            return False
-        
-        try:
-            file.save(os.path.join(SAMPLESPATH, filename))
-            return True
-            
-        except OSError:
-            return False
                  
 def allowed(filename):
     return  '.' in filename and filename.rsplit('.', 1)[1] in ALLOWEDTYPES

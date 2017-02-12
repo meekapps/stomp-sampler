@@ -2,7 +2,7 @@
 <head>
 <title>stomp-sampler</title>
 </head>
-<h1>samples</h1>
+<h1>stomp-sampler</h1>
 <body>
 <div><table>
 {% for sample in samples %}
@@ -14,11 +14,26 @@
 {% endfor %}
 </table>
 </div>
-<br><br>
+<br/><br/>
+
+{% if max_samples%}
+<i>limit {{ samples|length }}</i>
+<br/><br/>
+{% endif %}
 
 <form enctype="multipart/form-data" action="/sample" method="POST">
-    Add a new sample: <input name="file" type="file"/>
-    <input type="submit">
+Add a new sample: 
+{% if max_samples %}
+<input name="file" type="file" disabled/>
+{% else %}
+<input name="file" type="file"/>
+{% endif %}
+<br/>
+{% if max_samples %}
+<input type="submit" disabled/>
+{% else %}
+<input type="submit"/>
+{% endif %}
 </form>
 
 </body>

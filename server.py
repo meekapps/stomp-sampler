@@ -9,7 +9,7 @@ app = Flask(__name__, static_folder = 'samples')
 @app.route('/', methods=['GET'])
 def index():
     samples = Samples.get_all()
-    return render_template('index.html', samples=samples, static_dir=static_dir)
+    return render_template('index.html', samples=samples, max_samples=Samples.has_max())
 
 #curl -X GET http://127.0.0.1:5000/samples
 @app.route('/samples', methods=['GET'])
@@ -41,5 +41,5 @@ def response(success):
     return json.dumps(response) 
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0',port=5000)
+	app.run(host='0.0.0.0',port=5000,threaded=True)
 	    
