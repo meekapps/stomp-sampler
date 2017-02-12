@@ -5,16 +5,12 @@ from gevent.wsgi import WSGIServer
 import json
 from samples import Samples
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder = 'samples')
 
 @app.route('/', methods=['GET'])
 def index():
     samples = Samples.get_all()
-    return render_template('index.html', samples=samples)
-
-@app.route('/sample/<sample>', methods=['GET'])
-def get_sample(sample):
-    return send_from_directory(Samples.get_samples_path(), sample)
+    return render_template('index.html', samples=samples, static_dir=static_dir)
 
 #curl -X GET http://127.0.0.1:5000/samples
 @app.route('/samples', methods=['GET'])

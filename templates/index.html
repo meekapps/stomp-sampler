@@ -8,7 +8,7 @@
 {% for sample in samples %}
 <tr>
 <td>{{ sample }}</td>
-<td><audio controls><source src=""></audio></td>
+<td><audio controls><source src="{{ url_for('static', filename = sample)}}"></audio></td>
 <td><button type="button" onclick="deleteSample('{{sample}}')">delete</button></td>
 </tr>
 {% endfor %}
