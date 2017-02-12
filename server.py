@@ -11,6 +11,16 @@ def index():
     samples = Samples.get_all()
     return render_template('index.html', samples=samples, max_samples=Samples.has_max())
 
+@app.route('/rename/<sample>', methods=['POST'])
+def rename_sample(sample):    
+    name = request.args.get('name')    
+    Samples.rename(sample, name)
+    
+    samples =  Samples.get_all()
+    response = {'samples' : samples}
+    return json.dumps(response)
+    
+
 #curl -X GET http://127.0.0.1:5000/samples
 @app.route('/samples', methods=['GET'])
 def get_samples():

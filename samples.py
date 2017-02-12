@@ -61,6 +61,22 @@ class Samples(object):
         # no samples directory yet
         except OSError:
             return None
+            
+    #rename sample with old_name to new_name
+    @staticmethod
+    def rename(old_name, new_name):
+        if old_name == None:
+            return False
+        if new_name == None:
+            return False
+        old_path = SAMPLESPATH + '/' + old_name
+        new_path = SAMPLESPATH + '/' + new_name
+        print(new_path)
+        try:
+            os.rename(old_path, new_path)
+            return True
+        except OSError:
+            return False
                  
 def allowed(filename):
     return  '.' in filename and filename.rsplit('.', 1)[1] in ALLOWEDTYPES

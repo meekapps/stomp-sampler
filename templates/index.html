@@ -7,9 +7,11 @@
 <div><table>
 {% for sample in samples %}
 <tr>
+<td><b>{{ loop.index }}) </b></td>
 <td>{{ sample }}</td>
+<td><button type="button" onclick="promptRename('{{sample}}')">Rename</button></td>
 <td><audio controls><source src="{{ url_for('static', filename = sample)}}"></audio></td>
-<td><button type="button" onclick="deleteSample('{{sample}}')">delete</button></td>
+<td><button type="button" onclick="deleteSample('{{sample}}')">Delete</button></td>
 </tr>
 {% endfor %}
 </table>
@@ -17,18 +19,17 @@
 <br/><br/>
 
 {% if max_samples%}
-<i>limit {{ samples|length }}</i>
+<i>reached limit ({{ samples|length }})</i>
 <br/><br/>
 {% endif %}
 
 <form enctype="multipart/form-data" action="/sample" method="POST">
-Add a new sample: 
+<p>Add a new sample:</p>
 {% if max_samples %}
 <input name="file" type="file" disabled/>
 {% else %}
 <input name="file" type="file"/>
 {% endif %}
-<br/>
 {% if max_samples %}
 <input type="submit" disabled/>
 {% else %}
@@ -51,6 +52,29 @@ function deleteSample(sample) {
         }
     }
     xhr.open("DELETE", path, true);
+    xhr.send();
+}
+
+function promptRename(oldName) {
+    let title = "Enter a new filename for ".concat(oldName).concat(" (including file extension).");
+    newName = prompt(title, oldName);
+    if (newName != null) {
+        renameSample(oldName, newName);
+    }
+}
+
+function renameSample(oldName, newName) {
+    var xhr = new XMLHttpRequest();
+    let endpoint = "/rename/";
+    let path = endpoint.concat(oldName);
+    let args = "?name=".concat(newName);
+    let fullPath = path.concat(args);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            location.reload()
+        }
+    }
+    xhr.open("POST", fullPath, true);
     xhr.send();
 }
 </script>
